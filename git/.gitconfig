@@ -1,0 +1,50 @@
+[credential "dev.azure.com"]
+  authority = MSA
+
+[alias]
+  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d"
+
+[diff]
+	tool = meld
+
+[merge]
+	tool = meld
+	default = current
+
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+
+[pull]
+	rebase = true
+
+[commit]
+	gpgsign = true
+
+[mergetool]
+  prompt = false
+
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+	path = /usr/local/bin/meld
+
+[difftool]
+	prompt = false
+
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+	path = /usr/local/bin/meld
+
+[core]
+  excludesfile = .gitignore
+
+[include]
+  path = .git/.gitconfig-user
+
+[gpg]
+	program = gpg
+
+[init]
+	defaultBranch = main
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
