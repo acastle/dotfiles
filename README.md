@@ -12,12 +12,18 @@ Steps to install dotfiles on a new machine.
 
 ### Ubuntu / Debian
 
+Basic ubuntu container or VM setup.
+
 ```bash
-add-apt-repository ppa:neovim-ppa/stable
+apt update
+apt install software-properties-common
+add-apt-repository ppa:neovim-ppa/unstable
 apt update
 apt install tmux git zsh stow curl neovim
 git clone https://github.com/acastle/dotfiles.git --recurse-submodules ~/.dotfiles && \ 
   pushd ~/.dotfiles && \
   ./install.sh && \
   popd
+
+zsh
 ```
