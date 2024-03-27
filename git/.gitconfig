@@ -10,10 +10,6 @@
 [merge]
 	tool = meld
 	default = current
-
-[credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
-
 [pull]
 	rebase = true
 
@@ -48,3 +44,6 @@
 
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
