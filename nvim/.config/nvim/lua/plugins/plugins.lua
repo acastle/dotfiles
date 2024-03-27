@@ -1,10 +1,12 @@
 return {
-  { "Mofiqul/vscode.nvim" },
   {
     "catppuccin/nvim",
     opts = {
       flavour = "mocha",
     },
+    config = function()
+      require("catppuccin").setup({})
+    end,
   },
   {
     "LazyVim/LazyVim",
@@ -26,38 +28,6 @@ return {
     opts = {
       cmdline = {
         view = "cmdline",
-      },
-    },
-  },
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
-  },
-  {
-    "mfussenegger/nvim-dap",
-    keys = {
-      {
-        "<F8>",
-        function()
-          require("dap").step_out()
-        end,
-        desc = "Step Out",
-      },
-      {
-        "<F10>",
-        function()
-          require("dap").step_over()
-        end,
-        desc = "Step Over",
-      },
-      {
-        "<F5>",
-        function()
-          require("dap").continue()
-        end,
-        desc = "Continue",
       },
     },
   },
