@@ -1,6 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
+export GPG_TTY=$(tty)
 
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
