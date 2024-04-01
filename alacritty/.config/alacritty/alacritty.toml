@@ -1,6 +1,7 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+
+[window]
+option_as_alt = "OnlyLeft"
 
 [font.bold]
 family = "FiraCode Nerd Font"
