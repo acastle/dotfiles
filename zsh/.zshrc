@@ -3,6 +3,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 export GPG_TTY=$(tty)
 
+export TERM=alacritty
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
