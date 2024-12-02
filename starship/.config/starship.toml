@@ -1,0 +1,125 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """\
+[ ](fg:text bg:surface0)\
+$os\
+[  ](fg:text bg:surface0)\
+$directory\
+[  ](fg:text bg:surface0)\
+[$git_branch$git_status](bg:surface0)\
+[](fg:surface0)\
+$line_break$character\
+"""
+
+right_format = """
+[](fg:surface0)\
+$time
+"""
+
+palette = "catppuccin_mocha"
+
+[directory]
+format = "[  $path]($style)"
+style = "fg:blue bg:surface0"
+home_symbol = "~"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = "◈"
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "bg:surface0 fg:text"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style)'
+symbol = "   "
+style = "fg:green bg:surface0"
+
+[git_status]
+format = '$ahead$behind$stashed$staged$modified$untracked'
+style = "fg:green bg:surface0"
+ahead = '[ ⇡${count}](fg:green)'
+diverged = '[ ⇕⇡${ahead_count}⇣${behind_count}](fg:green)'
+behind = '[ ⇣${count}](fg:green)'
+modified = '[ !${count}](fg:yellow bg:surface0)'
+untracked = '[ ?${count}](fg:blue bg:surface0)'
+deleted = '[ ✘${count}](fg:green)'
+staged = '[ +${count}](fg:yellow bg:surface0)'
+stashed = '[ *${count}](fg:green bg:surface0)'
+
+[git_metrics]
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+added_style = "fg:green bg:surface0"
+deleted_style = "fg:red bg:surface0"
+disabled = false
+
+[hg_branch]
+format = "[ $symbol$branch ]($style)"
+symbol = " "
+
+
+[cmd_duration]
+format = "[  $duration ]($style)"
+style = "fg:bright-white bg:18"
+
+[character]
+success_symbol = '[ ❯](bold green)'
+error_symbol = '[ ✗](bold red)'
+
+[time]
+disabled = false
+time_format = "%R"                                         # Hour:Minute Format
+format = '[[   $time ](fg:subtext0 bg:surface0)]($style)'
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
