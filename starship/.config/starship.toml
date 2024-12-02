@@ -1,9 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """\
-[ ](fg:text bg:surface0)\
-$os\
-[  ](fg:text bg:surface0)\
+[ $env_var  ](fg:text bg:surface0)\
 $directory\
 [  ](fg:text bg:surface0)\
 [$git_branch$git_status](bg:surface0)\
@@ -26,10 +24,14 @@ truncation_length = 3
 truncation_symbol = "…/"
 read_only = "◈"
 
-[os]
+[env_var.PROMPT_SYMBOL]
 disabled = false
-format = "[$symbol]($style)"
-style = "bg:surface0 fg:text"
+variable = "PROMPT_SYMBOL"
+symbol = ""
+default = ""
+style = "fg:text bg:surface0"
+format = "[$env_value]($style)"
+
 
 [os.symbols]
 Windows = "󰍲"
@@ -60,14 +62,15 @@ symbol = "   "
 style = "fg:green bg:surface0"
 
 [git_status]
-format = '$ahead$behind$stashed$staged$modified$untracked'
+disabled = false
+format = '$ahead_behind$stashed$staged$modified$untracked'
 style = "fg:green bg:surface0"
-ahead = '[ ⇡${count}](fg:green)'
+ahead = '[ ⇡${count}](fg:green bg:surface0)'
 diverged = '[ ⇕⇡${ahead_count}⇣${behind_count}](fg:green)'
-behind = '[ ⇣${count}](fg:green)'
+behind = '[ ⇣${count}](fg:green bg:surface0)'
 modified = '[ !${count}](fg:yellow bg:surface0)'
 untracked = '[ ?${count}](fg:blue bg:surface0)'
-deleted = '[ ✘${count}](fg:green)'
+deleted = '[ ✘${count}](fg:green bg:surface0)'
 staged = '[ +${count}](fg:yellow bg:surface0)'
 stashed = '[ *${count}](fg:green bg:surface0)'
 
@@ -94,7 +97,6 @@ error_symbol = '[ ✗](bold red)'
 disabled = false
 time_format = "%R"                                         # Hour:Minute Format
 format = '[[   $time ](fg:subtext0 bg:surface0)]($style)'
-
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
