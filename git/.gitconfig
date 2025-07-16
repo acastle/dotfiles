@@ -1,8 +1,8 @@
 [credential "dev.azure.com"]
-  authority = MSA
+  provider = azure-repos
 
 [alias]
-  cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 -r git branch -d"
+  cleanup = "!git branch --merged | grep  -v '\\*\\|main\\|master\\|develop' | xargs -n 1 -r git branch -d"
 
 [diff]
 	tool = meld
@@ -44,3 +44,4 @@
 
 [push]
 	autoSetupRemote = true
+
