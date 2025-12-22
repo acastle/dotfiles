@@ -1,4 +1,0 @@
-theme = catppuccin-mocha.conf
-font-family = "MesloLGMDZ Nerd Font"
-copy-on-select = clipboard
-clipboard-paste-protection = false
