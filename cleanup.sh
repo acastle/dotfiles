@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
 
-STOW_FOLDERS="git,tmux,zsh,nvim"
-
-DOT_FILES=$HOME/.dotfiles
-
-pushd $DOT_FILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g"); do
-	echo "Removing $folder"
-	stow -D $folder
-done
-popd
-
-rm $HOME/.oh-my-zsh-custom/custom/themes/powerlevel10k
+# Remove symlinks
+rm -f $HOME/.gitconfig
+rm -f $HOME/.gitignore
+rm -f $HOME/.tmux.conf
+rm -f $HOME/.zshrc
+rm -f $HOME/.p10k.zsh
+rm -f $HOME/.oh-my-zsh
+rm -f $HOME/.zsh
+rm -f $HOME/.shell_config
+rm -f $HOME/.config/nvim
+rm -f $HOME/.config/alacritty
+rm -f $HOME/.config/k9s
+rm -f $HOME/.config/ghostty
+rm -f $HOME/.oh-my-zsh-custom/themes/powerlevel10k
