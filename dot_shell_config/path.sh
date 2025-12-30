@@ -1,5 +1,4 @@
-go_bin=$(which go)
-if [[ -x "$go_bin" ]]; then
+if command -v go >/dev/null 2>&1; then
 	export PATH=$(go env GOPATH)/bin:$PATH
 fi
 
