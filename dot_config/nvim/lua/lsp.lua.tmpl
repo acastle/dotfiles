@@ -1,3 +1,41 @@
+{{- if lookPath "mwinit" }}
+-- Gather Python extra paths from bemol .env files
+local function bemol_python_paths()
+  local bemol_dir = vim.fs.find(".bemol", { upward = true, type = "directory" })[1]
+  if not bemol_dir then return {} end
+  local paths = {}
+  for name, type in vim.fs.dir(bemol_dir) do
+    if type == "directory" then
+      local env_file = bemol_dir .. "/" .. name .. "/Python/farm/.env"
+      local f = io.open(env_file, "r")
+      if f then
+        for line in f:lines() do
+          local val = line:match("^PYTHONPATH=(.+)")
+          if val then
+            for p in val:gmatch("[^:]+") do
+              table.insert(paths, p)
+            end
+          end
+        end
+        f:close()
+      end
+    end
+  end
+  return paths
+end
+
+vim.lsp.config("basedpyright", {
+  settings = {
+    basedpyright = {
+      analysis = {
+        extraPaths = bemol_python_paths(),
+      },
+    },
+  },
+})
+
+{{- end }}
+
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {

@@ -11,9 +11,17 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 fpath=(~/.zsh/completion $fpath)
 
-autoload -Uz compinit 
+autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
 	compinit;
 else
 	compinit -C;
 fi;
+
+# if you wish to use IMDS set AWS_EC2_METADATA_DISABLED=false
+export AWS_EC2_METADATA_DISABLED=true
+{{- if lookPath "aim" }}
+
+export PATH="$HOME/.aim/mcp-servers:$PATH"
+{{- end }}
+

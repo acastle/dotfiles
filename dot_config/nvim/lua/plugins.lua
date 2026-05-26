@@ -6,6 +6,7 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/stevearc/oil.nvim" },
+  { src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
 require("catppuccin").setup({
@@ -94,4 +95,8 @@ require("oil").setup({
     ["g."] = { "actions.toggle_hidden", mode = "n" },
     ["g\\"] = { "actions.toggle_trash", mode = "n" },
   },
+})
+
+require("lualine").setup({
+  options = { theme = "catppuccin" },
 })
