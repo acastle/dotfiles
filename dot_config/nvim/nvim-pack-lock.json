@@ -8,6 +8,10 @@
       "rev": "71b45a044c4ef6ecb1910880ef642d5a0e1c02e9",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "lualine.nvim": {
+      "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
     "mini.ai": {
       "rev": "4ce4c35e411ea329a15d4b15e9c89c2a3089e437",
       "src": "https://github.com/nvim-mini/mini.ai"

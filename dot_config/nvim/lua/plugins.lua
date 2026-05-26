@@ -1,5 +1,5 @@
 vim.pack.add({
-  { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+  { src = "https://github.com/catppuccin/nvim",                 name = "catppuccin" },
   { src = "https://github.com/nvim-mini/mini.icons" },
   { src = "https://github.com/nvim-mini/mini.ai" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -28,10 +28,12 @@ require("catppuccin").setup({
         warnings = { "underline" },
         information = { "underline" },
       },
+
     },
+    lualine = {},
   },
 })
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("catppuccin-nvim")
 
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()
@@ -73,7 +75,7 @@ require("fzf-lua").setup({ "default-title" })
 require("oil").setup({
   default_file_explorer = true,
   delete_to_trash = true,
- bskip_confirm_for_simple_edits = true,
+  bskip_confirm_for_simple_edits = true,
   view_options = {
     show_hidden = true,
   },
@@ -98,5 +100,6 @@ require("oil").setup({
 })
 
 require("lualine").setup({
-  options = { theme = "catppuccin" },
+  options = { theme = "catppuccin-nvim" },
 })
+
