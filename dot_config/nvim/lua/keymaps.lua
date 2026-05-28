@@ -76,5 +76,5 @@ map("n", "<leader>gc", fzf("git_commits"), { desc = "Git commits" })
 map("n", "<leader>gB", fzf("git_branches"), { desc = "Git branches" })
 
 map("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory (oil)" })
-map("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open file explorer (oil)" })
+map("n", "<leader>e", function() require("oil").open(vim.fn.expand("%:p:h")) end, { desc = "Open file explorer (current file dir)" })
 map("n", "<leader>E", function() require("oil").open(vim.fn.getcwd()) end, { desc = "Open file explorer (cwd)" })
